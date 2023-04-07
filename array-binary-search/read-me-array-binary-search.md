@@ -1,5 +1,8 @@
 # Array Binary Search
 
+## Whiteboard:
+![Alt text](./Screenshot%20from%202023-04-07%2004-28-25.png)
+
 ## proplem domain
 Write a function called binary-search which takes in 2 parameters: a sorted array and the search key, and return the index of the array’s element that is equal to the value of the search key, or -1 if the element is not in the array.
 

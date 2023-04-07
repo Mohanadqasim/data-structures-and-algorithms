@@ -1,5 +1,8 @@
 # Array Insert Shift
 
+## Whiteboard:
+![Alt text](./Screenshot%20from%202023-04-07%2003-57-17.png)
+
 ## proplem domain
 Write a function called insert-array which takes in an array and a value to be added. and return an array with the new value added at the middle index.
 
