@@ -13,7 +13,6 @@ def binary_search(arr, n):
 
 
 
-
 print(binary_search([4, 8, 15, 16, 23, 42],15))
 
 print(binary_search([-131, -82, 0, 27, 42, 68, 179],42))
