@@ -1,5 +1,5 @@
 import pytest
-from array-binary-search.array-binary-search import binary_search
+from ArrayBinarySearch import binary_search
 
 def test_binary_searh_no_elements(arr,n):
     actual = binary_search([],1)
