@@ -14,6 +14,8 @@ python  main.py
 pytest
 
 
-## Whiteboard:
+## Whiteboards:
+## Linked List
 ![Alt text](./Untitled%20(1).jpg)
-
+## Linked List Insertions
+![Alt text](./Untitled.jpg)

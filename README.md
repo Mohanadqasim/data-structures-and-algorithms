@@ -7,3 +7,4 @@
 |Code-Challenge-03|*[array-binary-search](./array-binary-search/read-me-array-binary-search.md)*|
 |Code-Challenge-04|*[Mock Interviews](./Mock-Interviews/mock-interviews.md)*|
 |Code-Challenge-05|*[Linked List](./linked-list/read-me-linked-list.md)*|
+|Code-Challenge-06|*[Linked List Insertions](./linked-list/read-me-linked-list.md)*|
