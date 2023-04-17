@@ -13,6 +13,28 @@ def test_insert():
     expected = "A ---> None"    
     assert actual == expected
 
+def test_append():
+    example = LinkedList()
+    example.append("B")
+    example.append("C")
+    actual = str(example)
+    expected = "A ---> B ---> C ---> None"    
+    assert actual == expected
+
+def test_insert_before():
+    example = LinkedList()
+    example.insert_before("B","X")
+    actual = str(example)
+    expected = "A ---> X ---> B ---> C ---> None"   
+    assert actual == expected
+
+def test_insert_after():
+    example = LinkedList()
+    example.insert_after("B","Y")
+    actual = str(example)
+    expected = "A ---> X ---> B ---> Y ---> C ---> None"   
+    assert actual == expected
+
 def test_included(example):
     actual = str(example.includes("A"))
     expected = "True"
@@ -23,8 +45,9 @@ def test_not_included(example):
     expected = "False"
     assert actual == expected
 
-@pytest.fixture
-def example():
+def test_delete():
     example = LinkedList()
-    example.insert("A")
-    return example
+    example.delete("B")
+    actual = str(example)
+    expected = "A ---> X ---> Y ---> C ---> None"   
+    assert actual == expected
