@@ -1,12 +1,13 @@
 from LinkedList import LinkedList
 if __name__ == "__main__":
     list = LinkedList()
-    
-    list.insert("A")
-    list.insert("B")
-    list.insert("this to return \"True\"")
-
+    list.append("a")
+    list.append("b")
+    list.append("c")
+    list.append("1")
+    list.append("2")
+    list.insert_after("a","777")
+    list.insert_before("c","Z")
+    list.delete("777")
     print(list)
-    print(list.include("A"))
-    print(list.include("this should return \"False\""))
-    print(list.include("this to return \"True\""))
+    
