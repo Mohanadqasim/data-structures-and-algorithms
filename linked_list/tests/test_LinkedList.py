@@ -68,3 +68,64 @@ def test_delete():
     actual = str(example)
     expected = " A ---> X ---> Y ---> C ---> None"   
     assert actual == expected
+
+def test_kthFromEnd_empty_list():
+    example = LinkedList()
+    actual = example.kthFromEnd(5)
+    expected = "linked list is empty"   
+    assert actual == expected
+
+
+def test_kthFromEnd_greater_than_length():
+    example = LinkedList()
+    example.append("A")
+    example.append("B")
+    example.append("C")
+    actual = example.kthFromEnd(5)
+    expected = "invalid input"   
+    assert actual == expected
+
+def test_kthFromEnd_equals_length():
+    example = LinkedList()
+    example.append("A")
+    example.append("B")
+    example.append("C")
+    actual = example.kthFromEnd(3)
+    expected = "invalid input"   
+    assert actual == expected
+
+def test_kthFromEnd_negative_value():
+    example = LinkedList()
+    example.append("A")
+    example.append("B")
+    example.append("C")
+    actual = example.kthFromEnd(-2)
+    expected = "invalid input"   
+    assert actual == expected
+
+def test_kthFromEnd_length_equal_one():
+    example = LinkedList()
+    example.append("A")
+    actual = example.kthFromEnd(5)
+    expected = "A"   
+    assert actual == expected
+
+def test_kthFromEnd_Happy_Path():
+    example = LinkedList()
+    example.append("1")
+    example.append("3")
+    example.append("8")
+    example.append("2")
+    actual = example.kthFromEnd(0)
+    expected = "2"   
+    assert actual == expected
+
+def test_kthFromEnd_Happy_Path2():
+    example = LinkedList()
+    example.append("1")
+    example.append("3")
+    example.append("8")
+    example.append("2")
+    actual = example.kthFromEnd(2)
+    expected = "3"   
+    assert actual == expected

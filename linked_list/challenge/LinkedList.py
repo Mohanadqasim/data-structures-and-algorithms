@@ -4,6 +4,7 @@ class Node:
         self.next = None
 
 class LinkedList:
+    l = 0
     def __init__(self):
         self.head = None
 
@@ -21,16 +22,16 @@ class LinkedList:
         return output
 
     def insert(self, value):
-
+        self.l+=1
         node = Node(value)
-
         node.next = self.head
         self.head = node
+        
 
 
     def append(self,value):
+        self.l+=1
         node = Node(value)
-        
         if self.head is None:
             self.head=node        
         else:
@@ -41,8 +42,8 @@ class LinkedList:
 
 
     def insert_before(self,value,new):
+        self.l+=1
         new_node = Node(new)
-
         if self.head.value == value:
             new_node.next = self.head
             self.head = new_node
@@ -60,6 +61,7 @@ class LinkedList:
             current = current.next
 
     def insert_after(self,value,new):
+        self.l+=1
         node = Node(new)
         if self.head is None:
             self.head = node
@@ -83,6 +85,7 @@ class LinkedList:
         return False
     
     def delete(self, value):
+        self.l-=1
         if self.head is None:
             return
     
@@ -99,4 +102,27 @@ class LinkedList:
                 return
             prev = current
             current = current.next
-
+    
+    def kthFromEnd(self,k):
+        length = self.l
+        if self.head is None:
+            return "linked list is empty"
+        elif length == 1:
+            return self.head.value
+        elif k > length:
+            return "invalid input"
+        elif k == length:
+            return "invalid input"
+        elif k < 0:
+            return "invalid input"
+        else:
+            index=length-1
+            node_index=index-k
+            temp=self.head
+            temp_index=0
+            while temp:
+                if temp_index == node_index:
+                    return temp.value
+                else:
+                    temp_index+=1
+                    temp=temp.next
