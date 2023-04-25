@@ -19,3 +19,5 @@ pytest
 ![Alt text](./Untitled%20(1).jpg)
 ## Linked List Insertions
 ![Alt text](./Untitled.jpg)
+## Linked List Kth
+![Alt text](./Untitled%20(2).jpg)
