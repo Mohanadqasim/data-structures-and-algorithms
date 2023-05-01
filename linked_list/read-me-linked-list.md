@@ -21,3 +21,5 @@ pytest
 ![Alt text](./Untitled.jpg)
 ## Linked List Kth
 ![Alt text](./Untitled%20(2).jpg)
+## Zip two linked lists
+![Alt text](./Untitled%20(3).jpg)

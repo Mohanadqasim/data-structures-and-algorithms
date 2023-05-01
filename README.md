@@ -9,3 +9,4 @@
 |Code-Challenge-05|*[Linked List](./linked_list/read-me-linked-list.md)*|
 |Code-Challenge-06|*[Linked List Insertions](./linked_list/read-me-linked-list.md)*|
 |Code-Challenge-07|*[Linked List kth](./linked_list/read-me-linked-list.md)*|
+|Code-Challenge-08|*[Zip two linked lists](./linked_list/read-me-linked-list.md)*|
