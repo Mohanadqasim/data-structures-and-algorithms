@@ -126,3 +126,32 @@ class LinkedList:
                 else:
                     temp_index+=1
                     temp=temp.next
+                    
+
+def zip_lists(list1, list2):
+    if not list1.head or not list2.head:
+        return list1 if list1.head else list2
+
+    new_list = LinkedList()
+    current1 = list1.head
+    current2 = list2.head
+    new_list.head = current1
+
+    while current1 and current2:
+        temp1 = current1.next
+        temp2 = current2.next
+
+        current1.next = current2
+        current2.next = temp1
+
+        current1 = temp1
+        current2 = temp2
+        
+    if current2:
+        while current2:
+            new_list.append(current2.value)
+            current2=current2.next
+
+    return new_list
+
+
