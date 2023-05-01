@@ -1,5 +1,5 @@
 import pytest
-from challenge.LinkedList import LinkedList
+from challenge.LinkedList import LinkedList,zip_lists
 # from challenge.node import node
 
 def test_str_empty_linked_list():
@@ -129,3 +129,16 @@ def test_kthFromEnd_Happy_Path2():
     actual = example.kthFromEnd(2)
     expected = "3"   
     assert actual == expected
+
+# def test_zip_lists():
+#     example1 = LinkedList()
+#     example2 = LinkedList()
+#     example1.append("a")
+#     example1.append("b")
+#     example1.append("c")
+#     example2.append("1")
+#     example2.append("2")
+#     example2.append("3")
+#     actual = zip_lists(example1,example2)
+#     expected = "a ---> 1 ---> b ---> 2 ---> c ---> 3 ---> None"   
+#     assert actual == expected

@@ -3,8 +3,8 @@ if __name__ == "__main__":
     
     linked_list1 = LinkedList()
     linked_list1.append("a")
-    # linked_list1.append("b")
-    # linked_list1.append("c")
+    linked_list1.append("b")
+    linked_list1.append("c")
 
     linked_list2 = LinkedList()
     linked_list2.append("1")
