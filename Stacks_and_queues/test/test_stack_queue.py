@@ -1,7 +1,7 @@
 import pytest
-from Stacks_and_queues.Node import Node
-from Stacks_and_queues.Queue import Queue
-from Stacks_and_queues.Stack import Stack
+# from Stacks_and_queues.node import Node
+from queue_file import Queue
+from stack_file import Stack
 
 def test_empty_queue():
     queue = Queue()
@@ -39,7 +39,7 @@ def test_peek():
     queue = Queue()
     queue.enqueue(1)
     queue.enqueue(2)
-    excepted="1"
+    excepted=1
     actual = Queue.peek(queue)
     assert excepted == actual
 ################################stack################################
@@ -93,7 +93,7 @@ def test_stack_peek():
 
 def test_stack_get_size_empty():
     stack=Stack()
-    excepted = "0"
+    excepted = 0
     actual = stack.get_size()
     assert excepted == actual
 
@@ -102,7 +102,7 @@ def test_stack_get_size():
     stack.push("a")
     stack.push("b")
     stack.push("c")
-    excepted = "3"
+    excepted = 3
     actual = stack.get_size()
     assert excepted == actual
 
@@ -111,6 +111,6 @@ def test_stack_get_is_empty():
     stack.push("a")
     stack.push("b")
     stack.push("c")
-    excepted = "False"
+    excepted = False
     actual = stack.is_empty()
     assert excepted == actual
