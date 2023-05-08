@@ -1,5 +1,5 @@
-from Queue import Queue
-from Stack import Stack
+from Stacks_and_queues.queue_file import Queue
+from Stacks_and_queues.stack_file import Stack
 if __name__ == '__main__':
     queue1=Queue()
     queue1.enqueue(6)
