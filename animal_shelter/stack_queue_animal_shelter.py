@@ -24,25 +24,18 @@ class AnimalShelter:
         if pref == 'dog' :
            return self.dogs.dequeue()
         
-
-
-ll = AnimalShelter()
-
-ll.enqueue({"species" : "cat" , "name": "dddd"})
-ll.enqueue({"species" : "cat" , "name": "eee"})
-ll.enqueue({"species" : "cat" , "name": "fff"})
-ll.enqueue({"species" : "dog" , "name": "xxx"})
-ll.enqueue({"species" : "dog" , "name": "yyy"})
-ll.enqueue({"species" : "dog" , "name": "gggg"})
-
-print(ll.dequeue("cat"))
-print(ll.dequeue("cat"))
-ll.enqueue({"species" : "cat" , "name": "aaaa"})
-print(ll.dequeue("cat"))
-
-print(ll.dequeue("ss"))
-
-print(ll.dequeue("dog"))
-ll.enqueue({"species" : "dog" , "name": "zzzz"})
-print(ll.dequeue("dog"))
-print(ll.dequeue("dog"))
+    def __str__(self):
+        output = ""
+        if self.cats.front is None and self.dogs.front is None:
+            output = "this queue is empty"
+        else:
+            current = self.cats.front
+            while current is not None:
+                output += f"{current.value} ---> "
+                current = current.next
+            current = self.dogs.front
+            while current is not None:
+                output += f"{current.value} ---> "
+                current = current.next
+            output += "None"
+        return output
