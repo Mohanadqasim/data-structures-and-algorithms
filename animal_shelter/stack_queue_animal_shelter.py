@@ -2,40 +2,51 @@ from queue_file import Queue
 
 class AnimalShelter:
     def __init__(self):
-        """this is the init for animal shelter where we assign dogs and cats' list"""
-        self.cats = Queue()
-        self.dogs = Queue()
+        """Initialize the animal shelter with an empty queue for cats and dogs."""
+        self.shelter = Queue()
 
 
-    def enqueue(self,obj):
-        """this is an enqueue method that takes species from class dog or cat"""
-        if obj["species"] == "cat":
-            self.cats.enqueue(obj) 
-        if obj["species"] == "dog":
-            self.dogs.enqueue(obj)   
-
-
-    def dequeue(self,pref):
-        """this is dequeue for any"""
-        if pref != 'cat' and pref != 'dog':
-            return None 
-        if pref == 'cat' :
-           return self.cats.dequeue()
-        if pref == 'dog' :
-           return self.dogs.dequeue()
-        
-    def __str__(self):
-        output = ""
-        if self.cats.front is None and self.dogs.front is None:
-            output = "this queue is empty"
+    def enqueue(self, animal):
+        """Add an animal to the animal shelter."""
+        if animal["species"] == "cat" or animal["species"] == "dog":
+            self.shelter.enqueue(animal)
         else:
-            current = self.cats.front
-            while current is not None:
-                output += f"{current.value} ---> "
+            return ("Invalid species")
+
+
+    def dequeue(self, pref=None):
+        """Remove and return the first cat or dog in the animal shelter"""
+        if pref == "cat" or pref == "dog":
+            current = self.shelter.front
+            previous = None
+
+
+            # find preferred species
+            while current is not None and current.value["species"] != pref:
+                previous = current
                 current = current.next
-            current = self.dogs.front
-            while current is not None:
-                output += f"{current.value} ---> "
-                current = current.next
-            output += "None"
+
+            if current is not None:
+                if previous is None:
+                    self.shelter.front = current.next
+
+                # The preferred animal is not at the front of the queue.
+                elif previous is not None:
+                    previous.next = current.next
+
+                    
+                return current.value
+            
+        # Invalid preference, return None. 
+        return None
+        
+
+    def __str__(self):
+        """Return a string representation of the animal shelter."""
+        output = ""
+        current = self.shelter.front
+        while current is not None:
+            output += f"{current.value} ---> "
+            current = current.next
+        output += "None"
         return output
