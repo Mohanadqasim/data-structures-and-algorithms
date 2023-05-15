@@ -14,7 +14,7 @@ pytest
 
 ## Whiteboard Process
 
-
+!['alt text'](./Untitled%20(6).jpg)
 
 ## Approach & Efficiency
 
