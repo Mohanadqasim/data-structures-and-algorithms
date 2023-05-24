@@ -88,6 +88,31 @@ class Binary_tree:
                     self.max_value = root.value      
         find_max(self.root)
         return self.max_value
+    
+    # def breadth_first(self, root):
+    #     """
+    #     Performs a breadth-first traversal on the binary tree and returns the result.
+    #     Args:
+    #         root (Node): The root node of the binary tree.
+    #     Returns:
+    #         list: The result of breadth-first traversal as a list of node values.
+    #     """
+    #     result_list = []
+    #     if root is None:
+    #         return result_list
+
+    #     queue = [root]
+
+    #     while queue:
+    #         node = queue.pop(0)
+    #         result_list.append(node.value)
+
+    #         if node.left is not None:
+    #             queue.append(node.left)
+    #         if node.right is not None:
+    #             queue.append(node.right)
+
+    #     return result_list
         
 
 class Binary_Search_Tree(Binary_tree):
@@ -145,3 +170,29 @@ class Binary_Search_Tree(Binary_tree):
 
         return False
     
+def breadth_first(root):
+    """
+    Performs a breadth-first traversal on the binary tree and returns the result.
+    Args:
+        root (Node): The root node of the binary tree.
+    Returns:
+        list: The result of breadth-first traversal as a list of node values.
+    """
+    result_list = []
+    if root is None:
+        return result_list
+
+    queue = [root]
+    index = 0
+
+    while index < len(queue):
+        node = queue[index]
+        result_list.append(node.value)
+        index += 1
+
+        if node.left is not None:
+            queue.append(node.left)
+        if node.right is not None:
+            queue.append(node.right)
+
+    return result_list
