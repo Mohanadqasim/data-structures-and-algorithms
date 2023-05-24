@@ -1,4 +1,4 @@
-from Trees import Binary_tree, Binary_Search_Tree
+from Trees import Binary_tree, Binary_Search_Tree,breadth_first
 from Node import Node
 import pytest
 
@@ -131,3 +131,29 @@ def test_contain_existing_node():
     expected = True
     actual = bst.contain(bst.root, 12)
     assert expected == actual
+
+def test_breadth_first_empty_tree():
+    tree = Binary_tree()
+    expected_breadth_first = []
+    actual_breadth_first = breadth_first(tree.root)
+    assert actual_breadth_first == expected_breadth_first
+
+def test_breadth_first_one_levels():
+    tree = Binary_tree()
+    tree.root=Node(10)
+    expected_breadth_first = [10]
+    actual_breadth_first = breadth_first(tree.root)
+    assert actual_breadth_first == expected_breadth_first
+
+def test_breadth_first_multi_levels():
+    tree = Binary_tree()
+    tree.root=Node(10)
+    tree.root.left=Node(5)
+    tree.root.right=Node(15)
+    tree.root.left.left=Node(3)
+    tree.root.left.right=Node(7)
+    tree.root.right.left=Node(12)
+    tree.root.right.right=Node(17)
+    expected_breadth_first = [10, 5, 15, 3, 7, 12, 17]
+    actual_breadth_first = breadth_first(tree.root)
+    assert actual_breadth_first == expected_breadth_first
