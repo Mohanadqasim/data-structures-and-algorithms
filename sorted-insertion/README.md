@@ -58,3 +58,6 @@ InsertionSort(int[] input)
 - increase i by 1
 
 5. Append value to sorted array.
+
+## Code Tracing 
+![Alt text](./Untitled%20(16).jpg)
