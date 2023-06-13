@@ -1,4 +1,14 @@
 def Insert(sorted, value):
+    """
+    Inserts a value into a sorted list in ascending order.
+
+    Args:
+        sorted (list): A sorted list of values.
+        value: The value to be inserted into the sorted list.
+
+    Returns:
+        None
+    """
     i = 0
     while i < len(sorted) and value > sorted[i]:
         i += 1
@@ -11,6 +21,15 @@ def Insert(sorted, value):
 
 
 def InsertionSort(input):
+    """
+    Sorts a list of values using the insertion sort algorithm.
+
+    Args:
+        input (list): The list of values to be sorted.
+
+    Returns:
+        list: The sorted list of values.
+    """
     sorted = []
     if len(input):
         sorted.append(input[0])
@@ -19,6 +38,7 @@ def InsertionSort(input):
         return sorted
     else:
         return([])
+
 
 
 
