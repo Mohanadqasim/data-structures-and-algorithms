@@ -1,31 +1,49 @@
 def sort_by_year(movies):
+    """
+    Sorts a list of movies based on their year in ascending order.
+    Args:movies (list): A list of dictionaries representing movies.
+    Returns:list: The sorted list of movies.
+    """
     for i in range(len(movies) - 1):
         for j in range(i + 1, len(movies)):
             if movies[i]['year'] > movies[j]['year']:
                 movies[i], movies[j] = movies[j], movies[i]
     return movies
 
+
 def remove_leading_words(title, words):
+    """
+    Removes leading words from a movie title.
+    Args:title (str): The title of the movie, words (list): A list of words to be removed from the title.
+    Returns:str: The title with leading words removed.
+    """
     title_words = title.split()
     while len(title_words) > 0 and title_words[0] in words:
         title_words.pop(0)
     return ' '.join(title_words)
 
+
 def sort_alphabetically(movies):
+    """
+    Sorts a list of movies alphabetically, considering leading word removal.
+    Args:movies (list): A list of dictionaries representing movies.
+    Returns:list: The sorted list of movies.
+    """
     ignore_words = ["A", "An", "The"]
     for i in range(len(movies) - 1):
         for j in range(i + 1, len(movies)):
             title_a = remove_leading_words(movies[i]['title'], ignore_words)
             title_b = remove_leading_words(movies[j]['title'], ignore_words)
-            if title_a.lower() > title_b.lower():  
+            if title_a.lower() > title_b.lower():
                 movies[i], movies[j] = movies[j], movies[i]
-            elif title_a.lower() == title_b.lower():  
+            elif title_a.lower() == title_b.lower():
                 if movies[i]['title'].lower() > movies[j]['title'].lower():
                     movies[i], movies[j] = movies[j], movies[i]
                 elif movies[i]['title'].lower() == movies[j]['title'].lower():
                     if movies[i]['title'] > movies[j]['title']:
                         movies[i], movies[j] = movies[j], movies[i]
     return movies
+
 
 movies = [
     {"title": "The Dark Knight", "year": 2008},
@@ -60,5 +78,5 @@ movies = [
     {"title": "Young Frankenstein", "year": 1974},
     {"title": "Zootopia", "year": 2016}
 ]
-print(sort_by_year(movies))
-# print(sort_alphabetically(movies))
+# print(sort_by_year(movies))
+print(sort_alphabetically(movies))
