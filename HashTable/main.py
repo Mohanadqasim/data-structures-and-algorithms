@@ -1,0 +1,38 @@
+from hashtable import Hashtable
+hashtable1 = Hashtable()
+
+hashtable1.set("A", 70)
+hashtable1.set("B", 90)
+hashtable1.set("C", 80)
+hashtable1.set("E", 60)
+hashtable1.set("Awq", 70)
+hashtable1.set("Basd", 90)
+hashtable1.set("Cfsa", 80)
+hashtable1.set("Eas", 60)
+
+print(hashtable1.hash_map[0])
+print(hashtable1.hash_map[1])
+print(hashtable1.hash_map[2])
+
+# print(hashtable1.get("A"))  
+# print(hashtable1.get("B"))  
+# print(hashtable1.get("C"))  
+# print(hashtable1.get("E"))  
+# print(hashtable1.get("Awq"))  
+# print(hashtable1.get("Basd"))  
+# print(hashtable1.get("Cfsa"))  
+# print(hashtable1.get("Eas"))  
+# print(hashtable1.get("X"))  
+
+# print(hashtable1.has("rthA"))  
+# print(hashtable1.has("B"))  
+# print(hashtable1.has("C"))  
+# print(hashtable1.has("E"))  
+# print(hashtable1.has("Awrthq"))  
+# print(hashtable1.has("Basd"))  
+# print(hashtable1.has("Cfsa"))  
+# print(hashtable1.has("Earthgs"))  
+# print(hashtable1.has("X"))  
+
+key_collection = hashtable1.keys()
+print(key_collection) 
