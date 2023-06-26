@@ -23,3 +23,4 @@
 |*Code-Challenge-27*|[Sort & Merge](./sort-merge/README.md) |
 |*Code-Challenge-28*|[Sorting: Comparisons](./SortingComparisons/README.md) |
 |*Code-Challenge-29*|[Mock Interviews](./mock-Interviews/mock-interviews4.md) |
+|*Code-Challenge-30*|[Hashtables](./HashTable/README.md) |
