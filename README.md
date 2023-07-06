@@ -24,4 +24,5 @@
 |*Code-Challenge-28*|[Sorting: Comparisons](./SortingComparisons/README.md) |
 |*Code-Challenge-29*|[Mock Interviews](./mock-Interviews/mock-interviews4.md) |
 |*Code-Challenge-30*|[Hashtables](./HashTable/README.md) |
-|*Code-Challenge-30*|[Hashmap Repeated Word](.//hashmap-repeated-word/README.md) |
+|*Code-Challenge-31*|[Hashmap Repeated Word](.//hashmap-repeated-word/README.md) |
+|*Code-Challenge-32*|[Tree Intersection](./tree_intersection/README.md) |
