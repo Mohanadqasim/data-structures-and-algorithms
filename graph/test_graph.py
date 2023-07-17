@@ -85,6 +85,17 @@ def test_single_vertex_graph():
     assert len(vertices) == 1
     assert vertices[0] == vertex
 
+def test_breadth_first(graph):
+    result = graph.breadth_first(list(graph.get_vertice())[0])
+    assert len(result) == 3
+    assert result == list(graph.get_vertice())
+
+def test_breadth_first_invalid_start_node(graph):
+    result = graph.breadth_first(Node(4))
+    assert len(result) == 0
+
+if __name__ == "__main__":
+    pytest.main()
 
 if __name__ == "__main__":
     pytest.main()
