@@ -3,10 +3,16 @@ class Node:
     def __init__(self,value=None):
         self.value = value
 
+    def __repr__(self):
+        return str(self.value)
+
 class Edge:
     def __init__(self,vertex,weight=0):
         self.vertex = vertex
         self.weight = weight
+    
+    def __repr__(self):
+        return f"vertex: {self.vertex}, weight: {self.weight}"
 
 class Graph:
     def __init__(self):
@@ -67,3 +73,36 @@ class Graph:
             print(node.value)
 
         return result
+    
+
+
+    def business_trip(self, cities):
+        price = 0
+        for i in range(len(cities) - 1):
+            current_city = cities[i]
+            next_city = cities[i + 1]
+            found_next_city = False
+
+            neighbors = self.get_neighbors(current_city)
+            
+            for idx, direction in enumerate(neighbors):
+                if direction.vertex == next_city:
+                    price += neighbors[idx].weight
+                    found_next_city = True
+            
+            if not found_next_city:
+                return 'Null'
+
+        return price
+
+
+
+    def __repr__(self):
+        output = ''
+        for vertex in self.adj_list:
+            output += f'{vertex.__str__()} -> '
+            for edge in self.adj_list[vertex]:
+                output += f'{edge.__str__()} / '
+            output += '\n'
+        return output
+
