@@ -17,6 +17,7 @@ def graph():
     
     return graph
 
+
 def test_add_vertex(graph):
     vertex4 = graph.add_vertex(4)
     vertices = graph.get_vertice()
@@ -94,8 +95,59 @@ def test_breadth_first_invalid_start_node(graph):
     result = graph.breadth_first(Node(4))
     assert len(result) == 0
 
-if __name__ == "__main__":
-    pytest.main()
+def test_business_trip_valid_route():
+    graph = Graph()
+
+    a = graph.add_vertex("Arendelle")
+    b = graph.add_vertex("New Monstropolis")
+    c = graph.add_vertex("Naboo")
+    d = graph.add_vertex("Amman")
+
+
+    graph.add_edge(a, b, 800)
+    graph.add_edge(b, c, 500)
+    graph.add_edge(c, d, 1500)
+    result = graph.business_trip([a, b, c, d])
+    assert result == 2800
+
+def test_business_trip_valid_route_reverse(graph):
+    graph = Graph()
+
+    a = graph.add_vertex("Arendelle")
+    b = graph.add_vertex("New Monstropolis")
+    c = graph.add_vertex("Naboo")
+    d = graph.add_vertex("Amman")
+    e = graph.add_vertex("Irbid")
+
+    graph.add_edge(a, b, 800)
+    graph.add_edge(b, c, 500)
+    graph.add_edge(c, d, 1500)
+
+    result = graph.business_trip([d, c, b, a])
+    assert result == 2800
+
+def test_business_trip_invalid_route(graph):
+    graph = Graph()
+
+    a = graph.add_vertex("Arendelle")
+    c = graph.add_vertex("Naboo")
+
+    result = graph.business_trip([a, c])
+    assert result == "Null"
+
+def test_business_trip_invalid_route_partial(graph):
+    graph = Graph()
+
+    a = graph.add_vertex("Arendelle")
+    b = graph.add_vertex("New Monstropolis")
+    e = graph.add_vertex("Irbid")
+
+    graph.add_edge(a, b, 800)
+
+    result = graph.business_trip([a, b, e])
+    assert result == "Null"
+
+
 
 if __name__ == "__main__":
     pytest.main()
