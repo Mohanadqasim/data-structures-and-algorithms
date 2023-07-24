@@ -96,6 +96,32 @@ class Graph:
         return price
 
 
+    def depth_first(self, start_node):
+        if start_node not in self.adj_list:
+            print("Invalid start node.")
+            return []
+
+        visited = set()
+        stack = deque([start_node])
+        result = []
+
+        while stack:
+            node = stack.pop()
+            if node not in visited:
+                visited.add(node)
+                result.append(node)
+
+                neighbors = reversed(self.adj_list[node]) 
+                for edge in neighbors:
+                    neighbor = edge.vertex
+                    if neighbor not in visited:
+                        stack.append(neighbor)
+
+        for node in result:
+            print(node.value)
+
+        return result
+    
 
     def __repr__(self):
         output = ''

@@ -147,6 +147,74 @@ def test_business_trip_invalid_route_partial(graph):
     result = graph.business_trip([a, b, e])
     assert result == "Null"
 
+def test_depth_first_start_at_vertex_with_no_neighbors(graph):
+    
+    graph = Graph()
+    vertex1 = graph.add_vertex(1)
+
+    result = graph.depth_first(vertex1)
+    assert len(result) == 1
+    assert result == [vertex1]
+
+def test_depth_first_start_at_vertex_with_neighbors(graph):
+   
+    graph = Graph()
+    vertex1 = graph.add_vertex(1)
+    vertex2 = graph.add_vertex(2)
+    vertex3 = graph.add_vertex(3)
+
+    graph.add_edge(vertex1, vertex2, 10)
+    graph.add_edge(vertex1, vertex3, 5)
+
+    result = graph.depth_first(vertex1)
+    assert len(result) == 3
+    assert result == [vertex1, vertex2, vertex3]
+
+def test_depth_first_graph_with_cycle(graph):
+    
+    graph = Graph()
+    vertex1 = graph.add_vertex(1)
+    vertex2 = graph.add_vertex(2)
+    vertex3 = graph.add_vertex(3)
+
+    graph.add_edge(vertex1, vertex2, 10)
+    graph.add_edge(vertex2, vertex3, 5)
+    graph.add_edge(vertex3, vertex1, 8)  
+
+    result = graph.depth_first(vertex1)
+    assert len(result) == 3
+    assert result == [vertex1, vertex2, vertex3]
+
+def test_depth_first_graph_with_disconnected_components(graph):
+
+    graph = Graph()
+    vertex1 = graph.add_vertex(1)
+    vertex2 = graph.add_vertex(2)
+    vertex3 = graph.add_vertex(3)
+    vertex4 = graph.add_vertex(4)
+
+    graph.add_edge(vertex1, vertex2, 10)
+    graph.add_edge(vertex3, vertex4, 5)  
+
+    result = graph.depth_first(vertex1)
+    assert len(result) == 2  
+    assert result == [vertex1, vertex2]
+
+    result = graph.depth_first(vertex3)
+    assert len(result) == 2  
+    assert result == [vertex3, vertex4]
+
+def test_depth_first_invalid_start_node(graph):
+    graph = Graph()
+    vertex1 = graph.add_vertex(1)
+    vertex2 = graph.add_vertex(2)
+
+    graph.add_edge(vertex1, vertex2, 10)
+
+    result = graph.depth_first(Node(3))
+    assert len(result) == 0
+
+
 
 
 if __name__ == "__main__":
